@@ -1,0 +1,42 @@
+# Agent configuration
+# Defines personas, model assignments, and system prompt overrides per agent.
+# Edit here to change agent behavior without touching code.
+#
+# Azure AI-103: This maps to agent definitions in Azure AI Agent Service.
+# System prompts here are equivalent to Azure AI Agent instructions.
+
+default_model: gemma3:12b
+max_revision_rounds: 2
+
+agents:
+  researcher:
+    name: Researcher
+    model: gemma3:12b        # Override: use a faster model for research
+    temperature: 0.3         # Lower = more factual
+    system_prompt_override: null  # null = use default from agents/researcher.py
+
+  analyst:
+    name: Analyst
+    model: gemma3:12b
+    temperature: 0.4
+    system_prompt_override: null
+
+  writer:
+    name: Writer
+    model: mistral-small3.2  # Use a model strong on prose quality
+    temperature: 0.7         # Higher = more creative writing
+    system_prompt_override: null
+
+  critic:
+    name: Critic
+    model: gemma3:12b
+    temperature: 0.2         # Very low = consistent, strict evaluation
+    system_prompt_override: null
+    approval_threshold: 0.75  # Minimum quality score to approve (0–1)
+
+plugins:
+  search:
+    enabled: true
+    backend: none            # Options: none, azure
+    azure_index: research-docs
+    top_k: 5
