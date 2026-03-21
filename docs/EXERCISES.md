@@ -107,3 +107,17 @@ Open `agents/critic.py`.
    Which one is the orchestration SDK? Which one is the cloud platform? Which one is being retired/replaced?
 
 4. The AI-103 exam scenario: "You are building a customer service bot that can research a customer's issue, draft a response, and get human approval before sending. Which Azure AI components would you use and how would they connect?" Write a 3–4 sentence answer describing the architecture using Azure AI Agent Service, Semantic Kernel, and Azure AI Search.
+
+---
+
+## Production Cross-Reference
+
+These exercises cover cert theory. The following production systems implement the same patterns at scale — reference them during interviews to demonstrate real-world application:
+
+| Cert concept | Production implementation | Where |
+|---|---|---|
+| Multi-agent orchestration (Ex. 5) | AI content generation pipeline — SEO research agent → content writer → comparison builder → deployment across 5 products | growth-engine (private) |
+| Plugin / tool use (Ex. 3) | Model catalog as a reusable plugin — 40+ models with capability metadata, provider abstraction, and filtering | [ai-model-selector](https://npmjs.com/package/ai-model-selector) |
+| Multi-turn state (Ex. 1-2) | Collapsible AI help panel with context-aware chat, model selection, and streaming responses | growth-engine (private) |
+| Structured output / JSON extraction (Ex. 4) | Structured prompting with JSON schema enforcement for SEO page generation, social post drafting, and comparison table data | growth-engine (private) |
+| Provider abstraction (Ex. 3) | Multi-provider inference across Ollama, Claude API, and OpenRouter with model-level routing and compatibility guards | growth-engine (private) |
