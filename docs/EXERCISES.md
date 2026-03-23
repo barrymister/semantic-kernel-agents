@@ -116,8 +116,10 @@ These exercises cover cert theory. The following production systems implement th
 
 | Cert concept | Production implementation | Where |
 |---|---|---|
-| Multi-agent orchestration (Ex. 5) | AI content generation pipeline — SEO research agent → content writer → comparison builder → deployment across 5 products | growth-engine (private) |
-| Plugin / tool use (Ex. 3) | Model catalog as a reusable plugin — 40+ models with capability metadata, provider abstraction, and filtering | [ai-model-selector](https://npmjs.com/package/ai-model-selector) |
-| Multi-turn state (Ex. 1-2) | Collapsible AI help panel with context-aware chat, model selection, and streaming responses | growth-engine (private) |
-| Structured output / JSON extraction (Ex. 4) | Structured prompting with JSON schema enforcement for SEO page generation, social post drafting, and comparison table data | growth-engine (private) |
-| Provider abstraction (Ex. 3) | Multi-provider inference across Ollama, Claude API, and OpenRouter with model-level routing and compatibility guards | growth-engine (private) |
+| Multi-agent orchestration (Ex. 5) | Automated content pipeline — research agent → content writer → deployment across multiple products with daily cron | Private production system |
+| Plugin / tool use (Ex. 3) | Model catalog as a reusable plugin — 76+ models with capability metadata, provider abstraction, and filtering | [ai-model-selector](https://npmjs.com/package/ai-model-selector) |
+| Multi-turn state (Ex. 1-2) | AI help panel with context-aware chat, model selection, and SSE streaming responses | Private production system |
+| Structured output / JSON extraction (Ex. 4) | Structured prompting with JSON schema enforcement for automated SEO page generation, social content drafting, and data extraction | Private production system |
+| Provider abstraction (Ex. 3) | Multi-provider inference across Ollama, Claude API, and OpenRouter with model-level routing and compatibility guards | Private production system |
+| Agent evaluation + feedback (Ex. 5) | AI visibility monitoring — scans 4 AI search engines, parses citation patterns, generates optimization recommendations | Private production system |
+| Tool orchestration (Ex. 3) | Headless 3D CAD rendering API with 16 endpoints for model creation, measurement, and export — AI render-in-the-loop design feedback | Private production system |
